@@ -8,11 +8,12 @@ jobs:
   name: run jest unit test
   runs-on: ubuntu-latest
   steps:
+    - uses: actions/checkout@v3
     - name: Setup Node
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: 18
     - name: Install dependencies
-      run: npm install
+      run: yarn install
     - name: Run tests
-      run: npm run test
+      run: yarn test
