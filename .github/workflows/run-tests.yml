@@ -1,0 +1,18 @@
+on:
+  push:
+
+name: run tests
+
+jobs:
+ run_test:
+  name: run jest unit test
+  runs-on: ubuntu-latest
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: lts/*
+    - name: Install dependencies
+      run: yarn install
+    - name: Run tests
+      run: yarn test
